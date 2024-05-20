@@ -12,7 +12,7 @@ O `slicing_mp3.js` vai precisar do ffmpeg definido no PATH do Windows para funci
 ## Uso
 
 ### copy_subtitle.js
-Para copiar a legenda para área de transferência o atalho é `Ctrl+v`.
+Para copiar a legenda para área de transferência o atalho é `Ctrl+c`.
 
 <img src='./Screenshots/001.png' width="800"/>
 
