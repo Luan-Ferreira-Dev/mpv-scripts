@@ -20,9 +20,12 @@ function slicing(){
     var filename = mp.get_property("filename/no-ext") + Math.floor(start) + file_extension;
     var output = "'" + output_path + filename + "'";
     var input = "'" + mp.get_property("path") + "'";
+
+    var id = mp.get_property("current-tracks/audio/id");
+    id = isNaN(id)? 0 : id - 1;
     
     if (start != "no" && end != "no") {
-        mp.commandv("run", "powershell", "ffmpeg", "-i", input, "-ss", format_time(start), "-to", format_time(end), output);
+        mp.commandv("run", "powershell", "ffmpeg", "-i", input, "-map 0:a:" + id, "-ss", format_time(start), "-to", format_time(end), output);
         mp.osd_message(output);
     } else {
         mp.osd_message("A-B loop missing");
